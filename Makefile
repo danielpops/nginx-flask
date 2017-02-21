@@ -21,7 +21,7 @@ ${DOCKER_BUILD}: docker_build_%:
 
 .PHONY: ${DOCKER_RUN}
 ${DOCKER_RUN}: docker_run_%: docker_build_%
-	$(eval ports := $(shell if [ "$*" == "flask" ]; then echo "-p 5001:5001"; else echo "-p 80:80 -p 443:443"; fi))
+	$(eval ports := $(shell if [ "$*" == "flask" ]; then echo "-p 5000:5000"; else echo "-p 80:80 -p 443:443"; fi))
 	docker run -it --rm -h docker-$(TAG)_$*_1 ${ports} --entrypoint /bin/bash --name $(TAG)_$*_1 -v /etc/letsencrypt:/etc/letsencrypt:ro $(TAG)_$*_1
 
 .PHONY: ${DOCKER_EXEC}

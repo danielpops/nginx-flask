@@ -16,6 +16,6 @@ ADD ./run.sh /opt/example/run.sh
 
 WORKDIR /opt/example
 
-EXPOSE 5001
+EXPOSE 5000
 
 ENTRYPOINT /opt/example/run.sh
