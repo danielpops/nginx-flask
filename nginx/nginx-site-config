@@ -33,6 +33,6 @@ server {
         server_name www.example.com;
 
         location / {
-            proxy_pass http://flask.example.com:5001;
+            proxy_pass http://flask:5001;
         }
 }

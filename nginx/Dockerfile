@@ -13,5 +13,8 @@ RUN mkdir -p /etc/nginx/cert \
     && openssl dhparam 2048 -out /etc/nginx/cert/dhparam.pem
 
 ADD nginx-site-config /etc/nginx/sites-available/default
+ADD run.sh /opt/nginx/run.sh
 
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+WORKDIR /opt/nginx
+
+ENTRYPOINT ["/opt/nginx/run.sh"]

@@ -15,4 +15,7 @@ ADD ./app.py /opt/example/app.py
 ADD ./run.sh /opt/example/run.sh
 
 WORKDIR /opt/example
+
+EXPOSE 5001
+
 ENTRYPOINT /opt/example/run.sh
